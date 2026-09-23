@@ -1,1 +1,861 @@
-/* Your SCSS here. */
+// Our palette. Change a colour here to update it throughout the page.
+$black: #020403;
+$rust: #5f2e1b;
+$slate: #1a2324;
+$charcoal: #141413;
+$ivory: #f3efe8;
+$muted: #b9bcb6;
+$accent: #d8ac90;
+$border: rgba($ivory, 0.15);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  background-color: $black;
+  color: $ivory;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px;
+}
+
+a {
+  color: inherit;
+}
+
+p {
+  color: $muted;
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 76px;
+  letter-spacing: -3px;
+  margin: 16px 0 28px;
+}
+
+h2 {
+  font-size: 48px;
+  letter-spacing: -1.5px;
+  margin: 12px 0 24px;
+}
+
+h3 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+em {
+  color: $accent;
+  font-weight: normal;
+}
+
+.container {
+  width: 90%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+section, footer {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.eyebrow {
+  color: $accent;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: bold;
+}
+
+.section-intro {
+  max-width: 740px;
+  margin: 0 auto;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 5px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 20px;
+  z-index: 20;
+  background: $ivory;
+  color: $black;
+  padding: 10px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+
+// Sticky navigation and the smaller version used while scrolling.
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba($black, 0.96);
+  border-bottom: 1px solid $border;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  transition: padding 0.3s ease;
+}
+
+.site-name {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  text-decoration: none;
+  transition: font-size 0.3s ease;
+}
+
+.brand-dot {
+  color: $accent;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 17px;
+  text-decoration: none;
+  transition: font-size 0.3s ease, background-color 0.2s ease;
+}
+
+nav ul a:hover {
+  background: $slate;
+}
+
+nav ul a.active {
+  background: $rust;
+}
+
+.navbar.small nav {
+  padding: 10px 0;
+}
+
+.navbar.small .site-name {
+  font-size: 24px;
+}
+
+.navbar.small nav ul a {
+  font-size: 14px;
+}
+
+
+// The photo stays fixed while the introduction scrolls.
+#home {
+  background-image: linear-gradient(rgba($black, 0.87), rgba($black, 0.92)), url('../assets/images/shivani-illinois.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.introduction {
+  min-height: 680px;
+  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hello {
+  color: $ivory;
+  margin: 18px 0 0;
+  font-size: 18px;
+}
+
+.hero-description {
+  max-width: 590px;
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+}
+
+.button {
+  display: inline-block;
+  padding: 13px 22px;
+  border: 1px solid #996346;
+  border-radius: 5px;
+  background: $rust;
+  color: $ivory;
+  text-decoration: none;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.button span {
+  margin-left: 14px;
+}
+
+.button:hover {
+  background: #794129;
+  transform: translateY(-2px);
+}
+
+.quiet-link {
+  font-size: 14px;
+  text-decoration: none;
+  border-bottom: 1px solid $accent;
+}
+
+.hero-note {
+  margin: 48px 0 0;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+
+// Three simple, equal-width About cards.
+#about {
+  background: $slate;
+}
+
+.about-columns {
+  display: flex;
+  gap: 24px;
+  margin-top: 48px;
+  text-align: left;
+}
+
+.about-column {
+  flex: 1;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba($rust, 0.22), rgba($black, 0.3));
+  border-top: 2px solid #996346;
+  box-shadow: 0 12px 28px rgba($black, 0.15);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+
+.about-column h3 {
+  font-size: 25px;
+}
+
+.about-column p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+
+// Project description and compact carousel sit beside each other.
+#projects {
+  background: $black;
+}
+
+.project-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr;
+  align-items: center;
+  gap: 36px;
+  margin-top: 48px;
+  padding: 36px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: $charcoal;
+}
+
+.project-description {
+  text-align: left;
+}
+
+.project-description h3 {
+  font-size: 34px;
+}
+
+.project-description > p {
+  font-size: 14px;
+}
+
+.project-description > .eyebrow {
+  font-size: 10px;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0;
+}
+
+.project-tags span {
+  padding: 4px 10px;
+  border: 1px solid $border;
+  border-radius: 4px;
+  font-size: 11px;
+  color: $muted;
+}
+
+.project-gallery {
+  min-width: 0;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.carousel-slides {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.project-preview {
+  margin: 0;
+  background: $slate;
+  border: 1px solid $border;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.project-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.project-preview figcaption {
+  padding: 14px 10px;
+  font-size: 11px;
+}
+
+.carousel-button {
+  flex-shrink: 0;
+  width: 34px;
+  height: 40px;
+  border: 1px solid $border;
+  border-radius: 5px;
+  background: $rust;
+  color: $ivory;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.carousel-button:hover {
+  background: $slate;
+}
+
+#slide-counter {
+  font-size: 12px;
+  color: $accent;
+  letter-spacing: 3px;
+  margin: 16px 0 6px;
+}
+
+.image-hint {
+  font-size: 11px;
+  margin: 0;
+}
+
+.project-preview:not([hidden]) {
+  animation: slide-in 0.8s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+
+// Personal portrait: the whole image stays visible.
+#photo-banner {
+  background: $slate;
+}
+
+.photo-layout {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+  align-items: center;
+  gap: 90px;
+  max-width: 1020px;
+}
+
+.photo-copy {
+  text-align: left;
+}
+
+.photo-copy h2 {
+  font-size: 56px;
+}
+
+.photo-copy > p {
+  max-width: 400px;
+}
+
+.photo-location {
+  font-size: 12px;
+  padding-top: 24px;
+  border-top: 1px solid $border;
+}
+
+.personal-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid $border;
+  box-shadow: 18px 18px 0 $rust;
+}
+
+
+// Contact links and the small footer line.
+footer {
+  background: $charcoal;
+  padding-bottom: 24px;
+}
+
+.email-link a {
+  color: $ivory;
+  text-underline-offset: 6px;
+  text-decoration-color: $accent;
+  font-size: 20px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 32px 0 64px;
+}
+
+.social-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 24px;
+  min-width: 100px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.social-links a:hover {
+  background: $slate;
+}
+
+.social-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.instagram-icon {
+  background-image: url('../assets/images/icons/instagram.svg');
+}
+
+.linkedin-icon {
+  background-image: url('../assets/images/icons/linkedin.svg');
+}
+
+.github-icon {
+  background-color: #fff;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background-image: url('../assets/images/icons/github.svg');
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid $border;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.footer-bottom a {
+  text-decoration: none;
+}
+
+
+// Native project dialog supports keyboard focus and Escape.
+#project-modal {
+  width: 90%;
+  max-width: 700px;
+  max-height: 85vh;
+  padding: 36px;
+  border: 1px solid $border;
+  border-radius: 12px;
+  background: $charcoal;
+  color: $ivory;
+  overflow-y: auto;
+}
+
+#project-modal h2 {
+  font-size: 36px;
+}
+
+#project-modal::backdrop {
+  background: rgba($black, 0.85);
+}
+
+#close-project {
+  display: block;
+  margin: 0 0 24px auto;
+}
+
+#project-modal li {
+  margin-bottom: 15px;
+  color: $muted;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+// Tablet layout keeps all three About columns and gives projects a full row.
+@media (max-width: 1000px) {
+  h1 {
+    font-size: 62px;
+  }
+
+  h2 {
+    font-size: 40px;
+  }
+
+  section, footer {
+    padding: 72px 0;
+  }
+
+  .about-columns {
+    gap: 14px;
+  }
+
+  .about-column {
+    padding: 20px;
+  }
+
+  .about-column h3 {
+    font-size: 22px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+  }
+
+  .project-description {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .photo-layout {
+    gap: 48px;
+  }
+
+  .photo-copy h2 {
+    font-size: 42px;
+  }
+
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  nav ul {
+    gap: 2px;
+  }
+
+  nav ul a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  h1 {
+    font-size: 44px;
+    letter-spacing: -1.5px;
+  }
+
+  h2 {
+    font-size: 34px;
+  }
+
+  .introduction {
+    min-height: 600px;
+    padding: 50px 0;
+  }
+
+  .hero-actions {
+    gap: 20px;
+  }
+
+  .hero-note {
+    font-size: 10px;
+  }
+
+  .about-columns {
+    flex-direction: column;
+  }
+
+  .project-card {
+    padding: 20px 12px;
+  }
+
+  .project-description h3 {
+    font-size: 28px;
+  }
+
+  .carousel {
+    gap: 6px;
+  }
+
+  .carousel-button {
+    width: 28px;
+  }
+
+  .photo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .personal-photo {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .social-links a {
+    padding: 14px 18px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  #project-modal {
+    padding: 22px;
+  }
+
+  #project-modal h2 {
+    font-size: 28px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .project-preview:not([hidden]) {
+    animation: none;
+  }
+
+  nav, .site-name, nav ul a, .button {
+    transition: none;
+  }
+
+}
+
+
+
+// Keep the waterfront video centered and preserve its widescreen proportions.
+.waterfront-video {
+  max-width: 900px;
+  margin-top: 90px;
+}
+
+.waterfront-video h3 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+.waterfront-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: 28px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  background-color: $black;
+}
+
+@media (max-width: 600px) {
+  .waterfront-video {
+    margin-top: 60px;
+  }
+
+  .waterfront-video h3 {
+    font-size: 28px;
+  }
+}
+
+
+// Small visual details help the About cards feel personal and easy to scan.
+.about-column:hover {
+  transform: translateY(-5px);
+  border-color: $accent;
+}
+
+.about-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: $rust;
+  border-radius: 12px;
+  color: $ivory;
+}
+
+.about-icon svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-highlight {
+  margin-top: 18px;
+  padding: 12px 0 12px 14px;
+  border-left: 2px solid $accent;
+}
+
+.about-highlight strong, .about-highlight span {
+  display: block;
+}
+
+.about-highlight strong {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.about-highlight span {
+  font-size: 12px;
+  color: $accent;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.about-tags span {
+  padding: 5px 10px;
+  font-size: 11px;
+  border: 1px solid $border;
+  border-radius: 5px;
+  color: $ivory;
+  background: rgba($black, 0.2);
+}
+
+.about-column .card-note {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid $border;
+  font-size: 12px;
+}
+
+.about-column .dance-note {
+  margin-top: 24px;
+  font-family: Georgia, serif;
+  font-size: 20px;
+}
+
+.dance-note em {
+  font-size: 30px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-column {
+    transition: none;
+  }
+
+  .about-column:hover {
+    transform: none;
+  }
+}
+
+
+// Make room for all five menu items on tablets.
+@media (min-width: 601px) and (max-width: 1000px) {
+  nav {
+    gap: 16px;
+  }
+
+  .site-name {
+    font-size: 23px;
+  }
+
+  nav ul {
+    gap: 3px;
+  }
+
+  nav ul a {
+    font-size: 15px;
+    padding: 8px 9px;
+  }
+}
+
+@media (max-width: 600px) {
+  nav ul {
+    justify-content: center;
+  }
+}

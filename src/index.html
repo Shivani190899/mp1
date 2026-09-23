@@ -1,13 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Keeping navigation outside the header so it can carry throughout the whole page. -->
+  <div class="navbar">
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a class="site-name" href="#home">Shivani's Portfolio<span class="brand-dot"></span></a>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#photo-banner">Perspective</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <header id="home">
+    <div class="container">
+
+
+      <div class="introduction">
+        <p class="eyebrow">DATA · DESIGN · DISCOVERY</p>
+        <p class="hello">Hi, I’m Shivani Darekar.</p>
+        <h1>Turning complex data<br>into <em>clear stories.</em></h1>
+        <p class="hero-description">A curious mind at the intersection of analytics and the web.<br>Exploring ideas. Building with purpose. Learning along the way.</p>
+        <div class="hero-actions"><a class="button" href="#projects">Explore my work <span aria-hidden="true">↗</span></a><a class="quiet-link" href="#contact">Let’s connect <span aria-hidden="true">→</span></a></div>
+        <p class="hero-note">M.S. Information Management · University of Illinois Urbana-Champaign</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- About section -->
+    <section id="about">
+      <div class="container">
+        <p class="eyebrow">THE PERSON BEHIND THE PROJECTS</p>
+        <h2>A little about me.</h2>
+        <p class="section-intro">I like turning messy data into clear stories and occasionally turning those stories into something you can actually click. I’m an M.S. Information Management student at UIUC with a background in data analytics, computer engineering, and an ever-growing curiosity for the web.</p>
+
+        <div class="about-columns">
+          <div class="about-column">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v7c0 4 16 4 16 0V5M4 12v7c0 4 16 4 16 0v-7"/></svg>
+            </span>
+            <h3>What I build</h3>
+            <p>I turn messy data into useful tools—from data pipelines and warehouses to experiences people can explore.</p>
+            <div class="about-highlight"><strong>BeautyPulse</strong><span>8,000+ products · 1M+ reviews</span></div>
+            <div class="about-highlight"><strong>Instacart warehouse</strong><span>33M+ order records</span></div>
+            <p class="card-note">Built around real questions, made to be useful.</p>
+          </div>
+          <div class="about-column">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-16-2 20"/></svg>
+            </span>
+            <h3>What I’m learning</h3>
+            <p>Exploring where data meets the web, and adding something new to my toolkit along the way.</p>
+            <div class="about-tags"><span>HTML / CSS</span><span>JavaScript</span><span>Django</span><span>Python</span><span>SQL</span></div>
+            <p class="card-note">Currently curious about semantic search, RAG, SEO, and web analytics.</p>
+          </div>
+          <div class="about-column">
+            <span class="about-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 18V5l12-3v13M9 8l12-3"/><ellipse cx="6" cy="18" rx="3" ry="3"/><ellipse cx="18" cy="15" rx="3" ry="3"/></svg>
+            </span>
+            <h3>Beyond the screen</h3>
+            <p>You’ll find me on a pickleball court, in the pool, or on the dance floor. I’m a trained Salsa and Bachata dancer.</p>
+            <div class="about-tags"><span>Pickleball</span><span>Swimming</span><span>Salsa</span><span>Bachata</span></div>
+            <p class="dance-note">There’s always time for<br><em>“5, 6, 7, 8.”</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects section where a carousel of 4 photos of my Dashboard-->
+    <section id="projects">
+      <div class="container">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2>From questions to insights.</h2>
+        <p class="section-intro">A closer look at what I’ve been building.</p>
+        <article class="project-card">
+          <div class="project-description">
+          <p class="eyebrow">DATA VISUALIZATION / ENVIRONMENT</p>
+          <h3>Clean Water Act Compliance Dashboard</h3>
+          <p>A dashboard exploring Clean Water Act violations across U.S. states and industries. It brings together geographic hotspots, noncompliance trends, inspection activity, and enforcement actions to examine patterns in environmental oversight.</p>
+
+          <div class="project-tags"><span>Data analysis</span><span>Dashboard design</span></div>
+          <button class="button" id="open-project" type="button">View project details <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="project-gallery">
+          <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Clean Water Act dashboard views">
+            <button class="carousel-button" id="previous-slide" type="button" aria-label="Previous dashboard">&#10094;</button>
+            <div class="carousel-slides">
+          <figure class="project-preview">
+            <a href="assets/images/geographic-hotspots.png">
+              <img src="assets/images/geographic-hotspots.png" alt="Map and charts comparing Clean Water Act violations across states." loading="lazy">
+            </a>
+            <figcaption>Geographic Hotspots of Violations</figcaption>
+          </figure>
+          <figure class="project-preview" hidden>
+            <a href="assets/images/industry-noncompliance.png">
+              <img src="assets/images/industry-noncompliance.png" alt="Industry summary, severity breakdown, and noncompliance trends over time." loading="lazy">
+            </a>
+            <figcaption>Industrial Contributors to Noncompliance</figcaption>
+          </figure>
+          <figure class="project-preview" hidden>
+            <a href="assets/images/inspection-activity.png">
+              <img src="assets/images/inspection-activity.png" alt="Inspection activity by quarter, agency, and inspection type." loading="lazy">
+            </a>
+            <figcaption>Inspection Activity and Oversight</figcaption>
+          </figure>
+          <figure class="project-preview" hidden>
+            <a href="assets/images/enforcement-effectiveness.png">
+              <img src="assets/images/enforcement-effectiveness.png" alt="Comparison of violations, inspections, enforcement actions, and severity trends." loading="lazy">
+            </a>
+            <figcaption>Enforcement Effectiveness and Risk Alignment</figcaption>
+          </figure>
+            </div>
+            <button class="carousel-button" id="next-slide" type="button" aria-label="Next dashboard">&#10095;</button>
+          </div>
+          <p id="slide-counter" aria-live="polite" aria-atomic="true">1 / 4</p>
+          <p class="image-hint">Select an image to explore it in full size.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Personal photograph section -->
+    <section id="photo-banner">
+      <div class="container photo-layout">
+        <div class="photo-copy">
+          <p class="eyebrow">A LITTLE PERSPECTIVE</p>
+          <h2>Always curious.<br><em>Always creating.</em></h2>
+          <p>From exploring data to learning something new, curiosity is the thread that connects my work.</p>
+          <p class="photo-location">University of Illinois Urbana-Champaign</p>
+        </div>
+        <img class="personal-photo" src="assets/images/shivani-portrait.png" alt="Portrait of Shivani Darekar." loading="lazy">
+      </div>
+      <figure class="container waterfront-video">
+        <figcaption>
+          <p class="eyebrow">MY FAVOURITE PLACE</p>
+          <h3>A moment by the waterfront.</h3>
+          <p>Seattle’s waterfront is my favourite place to pause and take it all in.</p>
+        </figcaption>
+        <video controls playsinline preload="metadata" aria-label="Seattle waterfront skyline">
+          <source src="assets/videos/seattle-waterfront-1080p.mp4" type="video/mp4">
+  
+          Your browser does not support HTML5 video.
+          <a href="assets/videos/seattle-waterfront-1080p.mp4">Download the Seattle waterfront video</a>.
+        </video>
+      </figure>
+    </section>
+  </main>
+
+  <!-- Footer: contact information -->
+  <footer id="contact">
+    <div class="container">
+      <p class="eyebrow">SAY HELLO</p>
+      <h2>Let’s make something<br><em>meaningful.</em></h2>
+      <p class="email-link"><a href="mailto:darekar3@illinois.edu">darekar3@illinois.edu</a></p>
+
+      <!-- Each icon links to my social profile. -->
+      <div class="social-links">
+        <a href="https://www.instagram.com/shivani_dare_kar/" target="_blank" rel="noopener noreferrer" aria-label="Instagram (opens in a new tab)">
+          <span class="social-icon instagram-icon" aria-hidden="true"></span>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/shivani-darekar/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in a new tab)">
+          <span class="social-icon linkedin-icon" aria-hidden="true"></span>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Shivani190899" target="_blank" rel="noopener noreferrer" aria-label="GitHub (opens in a new tab)">
+          <span class="social-icon github-icon" aria-hidden="true"></span>
+          GitHub
+        </a>
+      </div>
+
+      <div class="footer-bottom"><p>Shivani Darekar · Portfolio</p>
+      <a href="#home">Back to top ↑</a></div>
+    </div>
+  </footer>
+
+  <dialog id="project-modal" aria-labelledby="modal-title">
+    <button id="close-project" class="button" type="button" autofocus>Close</button>
+    <h2 id="modal-title">Clean Water Act Compliance Dashboard</h2>
+    <p>This project explores how environmental noncompliance varies across states and industries, and how inspection and enforcement activity relates to those patterns.</p>
+    <h3>Explore the four dashboard views</h3>
+    <ul>
+      <li><strong>Geographic hotspots:</strong> compare violations and the duration of noncompliance across states.</li>
+      <li><strong>Industry patterns:</strong> explore industry-level violations, severity, and changes over time.</li>
+      <li><strong>Inspection activity:</strong> review inspections by quarter, agency, and inspection type.</li>
+      <li><strong>Enforcement and risk:</strong> compare inspections and enforcement actions with noncompliance patterns.</li>
+    </ul>
+    <p>The dashboard brings these views together to help identify areas for closer investigation.</p>
+  </dialog>
+
+</body>
 </html>
