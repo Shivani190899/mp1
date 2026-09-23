@@ -83,7 +83,6 @@ function updateNavbar() {
 }
 
 const navbarObserver = new ResizeObserver(function () {
-  document.documentElement.style.scrollPaddingTop = navbar.offsetHeight + 'px';
   updatePositionIndicator();
 });
 navbarObserver.observe(navbar);

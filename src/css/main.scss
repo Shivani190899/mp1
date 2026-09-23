@@ -23,6 +23,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  // Leave room for the sticky navigation when following section links.
   scroll-padding-top: 110px;
 }
 
@@ -610,6 +611,11 @@ body.modal-open {
 }
 
 @media (max-width: 600px) {
+  html {
+    // The navigation wraps onto more lines on small screens.
+    scroll-padding-top: 180px;
+  }
+
   nav {
     flex-direction: column;
     gap: 12px;
